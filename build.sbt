@@ -11,5 +11,8 @@ libraryDependencies ++= Seq(
   cache,
   javaWs,
   javaJpa,
-  "mysql" % "mysql-connector-java" % "5.1.38"
+  "mysql" % "mysql-connector-java" % "5.1.38",
+  "org.hibernate" % "hibernate-core" % "5.2.3.Final"
 )
+
+resolvers += "hibernate" at "https://mvnrepository.com/artifact/org.hibernate/hibernate-core"

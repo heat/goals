@@ -9,7 +9,6 @@ import validations.GoalsException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Singleton
 public class CategoriaConverter {
 
     public static List<Categoria> listToDomain(List<CategoriaEntity> categoriaEntityList){

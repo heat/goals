@@ -1,6 +1,9 @@
 package controllers;
 
+import com.google.inject.Inject;
 import domain.models.Categoria;
+import domain.repository.CategoriaRepository;
+import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.CategoriaService;
@@ -13,10 +16,14 @@ import static play.libs.Json.toJson;
 
 public class UsuarioController extends Controller {
 
+    @Inject
+    CategoriaRepository categoriaRepository;
+
+    @Transactional
     public Result getCategorias(){
         try{
 
-            List<Categoria> categorias = UsuarioService.getCategorias(1);
+            List<Categoria> categorias = categoriaRepository.listByUsuario(1);
 
             return ok(toJson(categorias));
         } catch (Exception ex){
