@@ -3,6 +3,7 @@ package controllers;
 import com.google.inject.Inject;
 import domain.models.Categoria;
 import domain.repository.CategoriaRepository;
+import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -23,9 +24,9 @@ public class UsuarioController extends Controller {
     public Result getCategorias(){
         try{
 
-            List<Categoria> categorias = categoriaRepository.listByUsuario(1);
+            //List<Categoria> categorias = categoriaRepository.listByUsuario(1);
 
-            return ok(toJson(categorias));
+            return ok();
         } catch (Exception ex){
             return internalServerError();
 

@@ -1,9 +1,6 @@
 package infrastructure.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "categorias")
@@ -12,6 +9,8 @@ import javax.persistence.Table;
 )
 public class CategoriaEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id_categoria;
     public Integer id_usuario;
     public String nome;
