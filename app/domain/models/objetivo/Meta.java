@@ -65,4 +65,8 @@ public class Meta {
     public void setSubmetas(List<SubMeta> submetas) {
         this.submetas = submetas;
     }
+
+    public void novaSubMeta(){
+
+    }
 }

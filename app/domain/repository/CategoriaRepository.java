@@ -2,7 +2,11 @@ package domain.repository;
 
 import domain.models.Categoria;
 
+import java.util.List;
+
 public interface CategoriaRepository {
 
-    public Categoria insert(Categoria categoria);
+    Categoria insert(Categoria categoria);
+
+    List<Categoria> listByUsuario(Integer idUsuario);
 }

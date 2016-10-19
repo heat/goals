@@ -2,7 +2,7 @@ package domain.models.objetivo;
 
 public class SubMeta {
 
-    private String descricao;
+    private final String descricao;
 
     public SubMeta(String descricao) {
         this.descricao = descricao;
@@ -12,7 +12,4 @@ public class SubMeta {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 }

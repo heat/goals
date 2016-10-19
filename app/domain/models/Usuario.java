@@ -3,6 +3,7 @@ package domain.models;
 import com.google.inject.Inject;
 import domain.models.objetivo.Meta;
 import domain.repository.CategoriaRepository;
+import services.CategoriaService;
 import validations.GoalsException;
 
 import java.util.List;
@@ -15,6 +16,11 @@ public class Usuario {
 
     @Inject
     CategoriaRepository categoriaRepository;
+
+    public Usuario(String nome) {
+        this.nome = nome;
+        this.categorias = CategoriaService.loadDefaultCategorias();
+    }
 
     public String getNome() {
         return nome;
@@ -53,5 +59,14 @@ public class Usuario {
 
     public boolean hasCategoria(Categoria categoria){
         return this.categorias.contains(categoria);
+    }
+
+    public boolean isValid(){
+
+        if (this.nome == null || categorias.size() == 0){
+            return false;
+        }
+
+        return true;
     }
 }
