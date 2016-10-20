@@ -8,5 +8,5 @@ public interface CategoriaRepository {
 
     Categoria insert(Categoria categoria);
 
-    List<Categoria> listByUsuario(Integer idUsuario);
+    List<Categoria> listByUsuario(Integer idUsuario) throws Exception;
 }

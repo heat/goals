@@ -38,7 +38,7 @@ public class CategoriaService implements CategoriaRepository{
     }
 
     @Override
-    public List<Categoria> listByUsuario(Integer idUsuario){
+    public List<Categoria> listByUsuario(Integer idUsuario) throws GoalsException{
 
         List<CategoriaEntity> categoriaEntityList = categoriaEntityRepository.listByUsuario(idUsuario);
 

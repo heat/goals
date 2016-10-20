@@ -17,12 +17,12 @@ public class AggregateCategoria {
         this.categorias = categorias;
     }
 
-    public void addCategoria(Integer id, String nome) {
+    public void addCategoria(Integer id, String nome) throws GoalsException{
 
         Categoria categoria = new Categoria(id, nome);
 
         if (hasCategoria(categoria)) {
-
+            throw new GoalsException(400, "TESTE");
         }
 
         this.categorias.add(categoria);

@@ -27,9 +27,10 @@ public class UsuarioController extends Controller {
             List<Categoria> categorias = categoriaRepository.listByUsuario(1);
 
             return ok(toJson(categorias));
+        } catch (GoalsException ex){
+            return status(ex.code, ex.message);
         } catch (Exception ex){
             return internalServerError();
-
         }
     }
 }

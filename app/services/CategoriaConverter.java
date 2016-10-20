@@ -11,18 +11,20 @@ import java.util.List;
 
 public class CategoriaConverter {
 
-    public static List<Categoria> listToDomain(List<CategoriaEntity> categoriaEntityList){
+    public static List<Categoria> listToDomain(List<CategoriaEntity> categoriaEntityList) throws GoalsException{
 
         List<Categoria> categorias = new ArrayList<Categoria>();
         AggregateCategoria aggregateCategoria = new AggregateCategoria();
 
         categoriaEntityList.forEach(categoria -> {
-
-            aggregateCategoria.addCategoria(categoria.id_categoria, categoria.nome);
-
+            try {
+                aggregateCategoria.addCategoria(categoria.id_categoria, categoria.nome);
+            } catch (GoalsException ex){
+                throw new GoalsException(ex.code, ex.message);
+                System.out.println(ex.message);
+            }
         });
 
         return aggregateCategoria.getCategorias();
-
     }
 }

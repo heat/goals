@@ -9,5 +9,5 @@ public interface CategoriaEntityRepository {
 
     CategoriaEntity insert(CategoriaEntity categoria);
 
-    List<CategoriaEntity> listByUsuario(Integer idUsuario);
+    List<CategoriaEntity> listByUsuario(Integer idUsuario) throws GoalsException;
 }

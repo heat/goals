@@ -10,15 +10,5 @@ import java.util.List;
 
 public class UsuarioService {
 
-    @Inject
-    static CategoriaRepository categoriaRepository;
-
-    public static List<Categoria> getCategorias(Integer idUsuario){
-
-        List<Categoria> categoriaEntityList = categoriaRepository.listByUsuario(idUsuario);
-
-        return categoriaEntityList;
-
-    }
 
 }
