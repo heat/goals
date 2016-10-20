@@ -24,9 +24,9 @@ public class UsuarioController extends Controller {
     public Result getCategorias(){
         try{
 
-            //List<Categoria> categorias = categoriaRepository.listByUsuario(1);
+            List<Categoria> categorias = categoriaRepository.listByUsuario(1);
 
-            return ok();
+            return ok(toJson(categorias));
         } catch (Exception ex){
             return internalServerError();
 

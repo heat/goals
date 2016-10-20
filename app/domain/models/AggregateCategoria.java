@@ -2,11 +2,12 @@ package domain.models;
 
 import validations.GoalsException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AggregateCategoria {
 
-    private List<Categoria> categorias;
+    private List<Categoria> categorias = new ArrayList<Categoria>();
 
     public List<Categoria> getCategorias() {
         return categorias;

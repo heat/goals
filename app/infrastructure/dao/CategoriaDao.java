@@ -18,8 +18,11 @@ public class CategoriaDao implements CategoriaEntityRepository{
 
     @Override
     public List<CategoriaEntity> listByUsuario(Integer idUsuario) {
+
         EntityManager em = JPA.em();
-        List<CategoriaEntity> categoriaEntityList = em.createNamedQuery("Categoria.listByUsuario", CategoriaEntity.class).getResultList();
+        List<CategoriaEntity> categoriaEntityList = em.createNamedQuery("Categoria.listByUsuario", CategoriaEntity.class)
+                .setParameter("idUsuario", idUsuario)
+                .getResultList();
 
         return categoriaEntityList;
 

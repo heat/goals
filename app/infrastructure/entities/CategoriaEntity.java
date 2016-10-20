@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "categorias")
 @NamedQueries(
-        @NamedQuery(name = "Categoria.listByUsuario", query = "SELECT c FROM Categoria WHERE id_usuario = :id_usuario ")
+        @NamedQuery(name = "Categoria.listByUsuario", query = "SELECT c FROM CategoriaEntity c WHERE id_usuario = :idUsuario ")
 )
 public class CategoriaEntity {
 
