@@ -17,9 +17,9 @@ public class AggregateCategoria {
         this.categorias = categorias;
     }
 
-    public void addCategoria(String nome) {
+    public void addCategoria(Integer id, String nome) {
 
-        Categoria categoria = new Categoria(nome);
+        Categoria categoria = new Categoria(id, nome);
 
         if (hasCategoria(categoria)) {
 

@@ -18,10 +18,10 @@ public class CategoriaService implements CategoriaRepository{
 
     public static List<Categoria> loadDefaultCategorias(){
 
-        Categoria c1 = new Categoria("Saúde");
-        Categoria c2 = new Categoria("Acadêmico");
-        Categoria c3 = new Categoria("Profissional");
-        Categoria c4 = new Categoria("Social");
+        Categoria c1 = new Categoria(0, "Saúde");
+        Categoria c2 = new Categoria(0, "Acadêmico");
+        Categoria c3 = new Categoria(0, "Profissional");
+        Categoria c4 = new Categoria(0, "Social");
 
         List<Categoria> categorias = new ArrayList<Categoria>();
         categorias.add(c1);

@@ -2,10 +2,16 @@ package domain.models;
 
 public class Categoria {
 
+    private final Integer id;
     private final String nome;
 
-    public Categoria(String nome) {
+    public Categoria(Integer id, String nome) {
+        this.id = id;
         this.nome = nome;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getNome() {
@@ -19,7 +25,7 @@ public class Categoria {
 
         Categoria categoria = (Categoria) o;
 
-        if (!nome.equals(categoria.nome)) return false;
+        if (!nome.equalsIgnoreCase(categoria.nome)) return false;
 
         return true;
     }

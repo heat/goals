@@ -18,11 +18,9 @@ public class CategoriaConverter {
 
         categoriaEntityList.forEach(categoria -> {
 
-            aggregateCategoria.addCategoria(categoria.nome);
+            aggregateCategoria.addCategoria(categoria.id_categoria, categoria.nome);
 
         });
-
-        System.out.println("TAMANHO: " + aggregateCategoria.getCategorias().size());
 
         return aggregateCategoria.getCategorias();
 
