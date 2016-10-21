@@ -1,29 +1,22 @@
 package services;
 
-import com.google.inject.Singleton;
 import domain.models.AggregateCategoria;
 import domain.models.Categoria;
 import infrastructure.entities.CategoriaEntity;
 import validations.GoalsException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriaConverter {
 
     public static List<Categoria> listToDomain(List<CategoriaEntity> categoriaEntityList) throws GoalsException{
 
-        List<Categoria> categorias = new ArrayList<Categoria>();
         AggregateCategoria aggregateCategoria = new AggregateCategoria();
 
-        categoriaEntityList.forEach(categoria -> {
-            try {
-                aggregateCategoria.addCategoria(categoria.id_categoria, categoria.nome);
-            } catch (GoalsException ex){
-                throw new GoalsException(ex.code, ex.message);
-                System.out.println(ex.message);
-            }
-        });
+        for (CategoriaEntity entity : categoriaEntityList) {
+            Categoria categoria = new Categoria(entity.id_categoria, entity.nome);
+            aggregateCategoria.addCategoria(categoria.getId(), categoria.getNome());
+        }
 
         return aggregateCategoria.getCategorias();
     }
