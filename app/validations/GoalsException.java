@@ -6,7 +6,7 @@ public class GoalsException extends Exception{
     public String message;
 
     public GoalsException(Integer code, String message) {
-        super(message);
+        this.message = message;
         this.code = code;
     }
 }
