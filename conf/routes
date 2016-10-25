@@ -11,5 +11,7 @@ GET        /message                 controllers.AsyncController.message
 
 GET        /usuarios/categorias     controllers.UsuarioController.getCategorias
 
+POST       /usuarios/metas          controllers.MetaController.post
+
 # Map static resources from the /public folder to the /assets URL path
 GET        /assets/*file            controllers.Assets.versioned(path="/public", file: Asset)

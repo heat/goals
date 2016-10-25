@@ -8,15 +8,16 @@ import java.util.List;
 public class Meta {
 
     private String nome;
+    private Integer id_usuario;
     private String descricao;
     private Categoria categoria;
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private List<SubMeta> submetas;
 
-    public Meta(String nome) {
+    /*public Meta(String nome) {
         this.nome = nome;
-    }
+    }*/
 
     public String getNome() {
         return nome;
@@ -64,6 +65,14 @@ public class Meta {
 
     public void setSubmetas(List<SubMeta> submetas) {
         this.submetas = submetas;
+    }
+
+    public Integer getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(Integer id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public void novaSubMeta(){

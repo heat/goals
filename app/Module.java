@@ -1,14 +1,13 @@
 import com.google.inject.AbstractModule;
-import java.time.Clock;
-
 import domain.repository.CategoriaRepository;
+import domain.repository.MetaRepository;
 import infrastructure.dao.CategoriaDao;
-import infrastructure.entities.CategoriaEntity;
+import infrastructure.dao.MetaDao;
 import infrastructure.repository.CategoriaEntityRepository;
-import services.ApplicationTimer;
-import services.AtomicCounter;
-import services.CategoriaService;
-import services.Counter;
+import infrastructure.repository.MetaEntityRepository;
+import services.*;
+
+import java.time.Clock;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -34,6 +33,8 @@ public class Module extends AbstractModule {
 
         bind(CategoriaRepository.class).to(CategoriaService.class);
         bind(CategoriaEntityRepository.class).to(CategoriaDao.class);
+        bind(MetaRepository.class).to(MetaService.class);
+        bind(MetaEntityRepository.class).to(MetaDao.class);
     }
 
 }
