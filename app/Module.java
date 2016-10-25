@@ -1,11 +1,11 @@
 import com.google.inject.AbstractModule;
 import domain.repository.CategoriaRepository;
 import domain.repository.MetaRepository;
+import domain.services.*;
 import infrastructure.dao.CategoriaDao;
 import infrastructure.dao.MetaDao;
 import infrastructure.repository.CategoriaEntityRepository;
 import infrastructure.repository.MetaEntityRepository;
-import services.*;
 
 import java.time.Clock;
 

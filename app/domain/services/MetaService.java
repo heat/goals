@@ -1,4 +1,4 @@
-package services;
+package domain.services;
 
 import com.google.inject.Inject;
 import domain.models.objetivo.Meta;

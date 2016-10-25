@@ -1,4 +1,4 @@
-package services;
+package domain.converters;
 
 import domain.models.AggregateCategoria;
 import domain.models.Categoria;
@@ -7,7 +7,7 @@ import validations.GoalsException;
 
 import java.util.List;
 
-public class CategoriaConverter {
+public abstract class CategoriaConverter {
 
     public static List<Categoria> listToDomain(List<CategoriaEntity> categoriaEntityList) throws GoalsException{
 

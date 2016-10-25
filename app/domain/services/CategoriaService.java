@@ -1,11 +1,11 @@
-package services;
+package domain.services;
 
 import com.google.inject.Inject;
+import domain.converters.CategoriaConverter;
 import domain.models.Categoria;
 import domain.repository.CategoriaRepository;
 import infrastructure.entities.CategoriaEntity;
 import infrastructure.repository.CategoriaEntityRepository;
-import scala.collection.generic.GenericOrderedCompanion;
 import validations.GoalsException;
 
 import java.util.ArrayList;

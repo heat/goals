@@ -15,9 +15,11 @@ public class Meta {
     private LocalDate dataFim;
     private List<SubMeta> submetas;
 
-    /*public Meta(String nome) {
+    public Meta() {}
+
+    public Meta(String nome) {
         this.nome = nome;
-    }*/
+    }
 
     public String getNome() {
         return nome;

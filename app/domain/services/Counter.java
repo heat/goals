@@ -1,4 +1,4 @@
-package services;
+package domain.services;
 
 /**
  * This interface demonstrates how to create a component that is injected

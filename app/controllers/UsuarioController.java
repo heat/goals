@@ -3,12 +3,9 @@ package controllers;
 import com.google.inject.Inject;
 import domain.models.Categoria;
 import domain.repository.CategoriaRepository;
-import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
-import services.CategoriaService;
-import services.UsuarioService;
 import validations.GoalsException;
 
 import java.util.List;

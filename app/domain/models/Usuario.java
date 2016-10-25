@@ -3,7 +3,7 @@ package domain.models;
 import com.google.inject.Inject;
 import domain.models.objetivo.Meta;
 import domain.repository.CategoriaRepository;
-import services.CategoriaService;
+import domain.services.CategoriaService;
 import validations.GoalsException;
 
 import java.util.List;
