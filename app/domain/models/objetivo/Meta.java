@@ -8,7 +8,7 @@ import java.util.List;
 public class Meta {
 
     private String nome;
-    private Integer id_usuario;
+    private Integer idUsuario;
     private String descricao;
     private Categoria categoria;
     private LocalDate dataInicio;
@@ -70,11 +70,11 @@ public class Meta {
     }
 
     public Integer getId_usuario() {
-        return id_usuario;
+        return idUsuario;
     }
 
     public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+        this.idUsuario = id_usuario;
     }
 
     public void novaSubMeta(){

@@ -37,9 +37,12 @@ public class MetaController extends Controller{
     public Result postSubmetas(Integer idMeta){
         try{
             JsonNode json = request().body().asJson();
-            SubMeta submeta = Json.fromJson(json.get("submeta"), SubMeta.class);
+            String descricao = json.get("submeta").get("descricao").asText();
 
-            metaRepository.insertSubMeta(submeta);
+            SubMeta subMeta = new SubMeta(idMeta,descricao);
+
+
+            metaRepository.insertSubMeta(subMeta);
 
             return created("SubMeta criada com sucesso.");
         } catch (Exception e){
