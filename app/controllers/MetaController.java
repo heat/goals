@@ -3,6 +3,7 @@ package controllers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
 import domain.models.objetivo.Meta;
+import domain.models.objetivo.SubMeta;
 import domain.repository.MetaRepository;
 import play.db.jpa.Transactional;
 import play.libs.Json;
@@ -24,7 +25,23 @@ public class MetaController extends Controller{
             meta.setId_usuario(1);
             metaRepository.insert(meta);
 
-            return created("Meta criada com sucesso");
+            return created("Meta criada com sucesso.");
+        } catch (Exception e){
+            return status(400, e.getMessage());
+        }
+
+    }
+
+    @Transactional
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result postSubmetas(Integer idMeta){
+        try{
+            JsonNode json = request().body().asJson();
+            SubMeta submeta = Json.fromJson(json.get("submeta"), SubMeta.class);
+
+            metaRepository.insertSubMeta(submeta);
+
+            return created("SubMeta criada com sucesso.");
         } catch (Exception e){
             return status(400, e.getMessage());
         }
