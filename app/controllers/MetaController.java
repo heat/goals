@@ -21,6 +21,7 @@ public class MetaController extends Controller{
         try{
             JsonNode json = request().body().asJson();
             Meta meta = Json.fromJson(json.get("Meta"), Meta.class);
+            meta.setId_usuario(1);
             metaRepository.insert(meta);
 
             return created("Meta criada com sucesso");

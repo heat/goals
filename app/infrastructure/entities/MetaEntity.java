@@ -2,6 +2,7 @@ package infrastructure.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "metas")
@@ -16,4 +17,7 @@ public class MetaEntity {
     public String descricao;
     public LocalDate dta_inicio;
     public LocalDate dta_fim;
+    public LocalDateTime dh_criacao;
+    public LocalDateTime dh_atualizado_em;
+
 }
