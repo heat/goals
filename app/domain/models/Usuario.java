@@ -48,7 +48,7 @@ public class Usuario {
 
     public void novaCategoria(String nome) throws GoalsException{
 
-        Categoria categoria = new Categoria(0, nome);
+        Categoria categoria = Categoria.of(nome);
 
         if (!hasCategoria(categoria)){
             Categoria c = categoriaRepository.insert(categoria);

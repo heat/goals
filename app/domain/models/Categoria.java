@@ -1,17 +1,10 @@
 package domain.models;
 
 public class Categoria {
-
-    private final Integer id;
     private final String nome;
 
-    public Categoria(Integer id, String nome) {
-        this.id = id;
+    private Categoria(String nome) {
         this.nome = nome;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public String getNome() {
@@ -25,9 +18,18 @@ public class Categoria {
 
         Categoria categoria = (Categoria) o;
 
-        if (!nome.equalsIgnoreCase(categoria.nome)) return false;
+        return nome.equals(categoria.nome);
 
-        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return nome.hashCode();
+    }
+
+
+    public static Categoria of(String nome) {
+        return new Categoria(nome);
     }
 
 }
