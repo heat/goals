@@ -1,6 +1,7 @@
 package domain.converters;
 
 
+import domain.models.Categoria;
 import domain.models.objetivo.Meta;
 import infrastructure.entities.MetaEntity;
 
@@ -27,13 +28,15 @@ public abstract class MetaConverter {
 
         for(MetaEntity metaEntity : metaEntityList) {
             Meta meta = new Meta();
+            meta.setIdMeta(metaEntity.id_meta);
             meta.setId_usuario(metaEntity.id_usuario);
             meta.setNome(metaEntity.nome);
             meta.setDescricao(metaEntity.descricao);
             meta.setDataInicio(metaEntity.dta_inicio);
             meta.setDataFim(metaEntity.dta_fim);
-            //categoria?
-            //submetas?
+            meta.setCategoria(new Categoria(metaEntity.categoria.id_categoria, metaEntity.categoria.nome));
+            meta.setSubmetas(SubMetaConverter.listToDomain(metaEntity.submetas));
+
             metas.add(meta);
         }
         return metas;

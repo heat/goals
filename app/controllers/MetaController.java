@@ -56,7 +56,6 @@ public class MetaController extends Controller {
     public Result getMetas() {
         try {
             List<Meta> metas = metaRepository.listByUsuario(1);
-
             return ok(toJson(metas));
         } catch (Exception e) {
             return status(400, e.getMessage());

@@ -1,17 +1,22 @@
 package domain.models.objetivo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import domain.models.Categoria;
 
 import java.time.LocalDate;
 import java.util.List;
 
+
 public class Meta {
 
-    private String nome;
+    private Integer idMeta;
     private Integer idUsuario;
+    private String nome;
     private String descricao;
     private Categoria categoria;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataInicio;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFim;
     private List<SubMeta> submetas;
 
@@ -19,6 +24,22 @@ public class Meta {
 
     public Meta(String nome) {
         this.nome = nome;
+    }
+
+    public Integer getIdMeta() {
+        return idMeta;
+    }
+
+    public void setIdMeta(Integer idMeta) {
+        this.idMeta = idMeta;
+    }
+
+    public Integer getId_usuario() {
+        return idUsuario;
+    }
+
+    public void setId_usuario(Integer id_usuario) {
+        this.idUsuario = id_usuario;
     }
 
     public String getNome() {
@@ -67,14 +88,6 @@ public class Meta {
 
     public void setSubmetas(List<SubMeta> submetas) {
         this.submetas = submetas;
-    }
-
-    public Integer getId_usuario() {
-        return idUsuario;
-    }
-
-    public void setId_usuario(Integer id_usuario) {
-        this.idUsuario = id_usuario;
     }
 
     public void novaSubMeta(){

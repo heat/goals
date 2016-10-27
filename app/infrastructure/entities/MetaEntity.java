@@ -3,6 +3,7 @@ package infrastructure.entities;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "metas")
@@ -22,5 +23,10 @@ public class MetaEntity {
     public LocalDate dta_fim;
     public LocalDateTime dh_criacao;
     public LocalDateTime dh_atualizado_em;
-
+    @OneToOne
+    @JoinColumn(name="id_categoria", referencedColumnName="id_categoria", insertable = false, updatable = false)
+    public CategoriaEntity categoria;
+    @OneToMany
+    @JoinColumn(name="id_meta", referencedColumnName="id_meta", insertable = false, updatable = false)
+    public List<SubMetaEntity> submetas;
 }
