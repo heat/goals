@@ -4,6 +4,9 @@ package domain.converters;
 import domain.models.objetivo.Meta;
 import infrastructure.entities.MetaEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class MetaConverter {
 
     public static MetaEntity domainToEntity(Meta domain){
@@ -17,5 +20,22 @@ public abstract class MetaConverter {
         entity.dta_inicio = domain.getDataInicio();
 
         return entity;
+    }
+
+    public static List<Meta> listToDomain(List<MetaEntity> metaEntityList) {
+        List<Meta> metas = new ArrayList<Meta>();
+
+        for(MetaEntity metaEntity : metaEntityList) {
+            Meta meta = new Meta();
+            meta.setId_usuario(metaEntity.id_usuario);
+            meta.setNome(metaEntity.nome);
+            meta.setDescricao(metaEntity.descricao);
+            meta.setDataInicio(metaEntity.dta_inicio);
+            meta.setDataFim(metaEntity.dta_fim);
+            //categoria?
+            //submetas?
+            metas.add(meta);
+        }
+        return metas;
     }
 }

@@ -11,6 +11,8 @@ GET         /message                        controllers.AsyncController.message
 
 GET         /usuarios/categorias            controllers.UsuarioController.getCategorias
 
+GET         /usuarios/metas                 controllers.MetaController.getMetas
+
 POST        /usuarios/metas                 controllers.MetaController.post
 
 POST       /usuarios/metas/:id/submetas     controllers.MetaController.postSubmetas(id: Integer)

@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "metas")
+@NamedQueries(
+        @NamedQuery(name = "Meta.listByUsuario", query = "SELECT m FROM MetaEntity m WHERE id_usuario = :idUsuario ")
+)
 public class MetaEntity {
 
     @Id
